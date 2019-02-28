@@ -40,6 +40,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -149,6 +151,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Поиск";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -173,19 +176,38 @@
             // 
             // domainUpDown1
             // 
-            this.domainUpDown1.Items.Add("По возрастанию");
-            this.domainUpDown1.Items.Add("По убыванию");
+            this.domainUpDown1.Items.Add("По имени");
+            this.domainUpDown1.Items.Add("По курсу");
             this.domainUpDown1.Location = new System.Drawing.Point(86, 250);
             this.domainUpDown1.Name = "domainUpDown1";
             this.domainUpDown1.Size = new System.Drawing.Size(120, 20);
             this.domainUpDown1.TabIndex = 8;
-            this.domainUpDown1.Text = "По возрастанию";
+            this.domainUpDown1.Text = "По имени";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(321, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Результаты поиска";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(324, 32);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(311, 238);
+            this.listBox1.TabIndex = 11;
             // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 292);
+            this.ClientSize = new System.Drawing.Size(645, 284);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -217,5 +239,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

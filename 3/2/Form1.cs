@@ -48,6 +48,7 @@ namespace _2
 
         private void button3_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             XmlSerializer serializer = new XmlSerializer(typeof(Univercity));
             using (FileStream stream = new FileStream("University.xml", FileMode.Open))
             {
@@ -70,7 +71,48 @@ namespace _2
         private void поискToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Search search = new Search();
-            search.ShowDialog();
+            search.ShowDialog(this);
+        }
+
+        private void годToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            XmlSerializer serializer = new XmlSerializer(typeof(Univercity));
+            using (FileStream stream = new FileStream("University.xml", FileMode.Open))
+                univercity = serializer.Deserialize(stream) as Univercity;
+
+            IEnumerable<Student> ordered = univercity.Students.OrderBy(p => p.Born);
+            foreach (Student student in ordered)
+                listBox1.Items.Add(student.Fio);
+        }
+
+        private void фамилияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            XmlSerializer serializer = new XmlSerializer(typeof(Univercity));
+            using (FileStream stream = new FileStream("University.xml", FileMode.Open))
+                univercity = serializer.Deserialize(stream) as Univercity;
+
+            IEnumerable<Student> ordered = univercity.Students.OrderBy(p => p.Fio);
+            foreach (Student student in ordered)
+                listBox1.Items.Add(student.Fio);
+        }
+
+        private void специальностьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            XmlSerializer serializer = new XmlSerializer(typeof(Univercity));
+            using (FileStream stream = new FileStream("University.xml", FileMode.Open))
+                univercity = serializer.Deserialize(stream) as Univercity;
+
+            IEnumerable<Student> ordered = univercity.Students.OrderBy(p => p.Specialization);
+            foreach (Student student in ordered)
+                listBox1.Items.Add(student.Fio);
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Плотников Дмитрий Андреевич 2-5");
         }
     }
 }

@@ -49,6 +49,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сортировкаПоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.годToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.фамилияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.специальностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -237,7 +242,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.файлToolStripMenuItem,
+            this.сортировкаПоToolStripMenuItem,
+            this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(640, 24);
@@ -260,6 +267,44 @@
             this.поискToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.поискToolStripMenuItem.Text = "Поиск";
             this.поискToolStripMenuItem.Click += new System.EventHandler(this.поискToolStripMenuItem_Click);
+            // 
+            // сортировкаПоToolStripMenuItem
+            // 
+            this.сортировкаПоToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.годToolStripMenuItem,
+            this.фамилияToolStripMenuItem,
+            this.специальностьToolStripMenuItem});
+            this.сортировкаПоToolStripMenuItem.Name = "сортировкаПоToolStripMenuItem";
+            this.сортировкаПоToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.сортировкаПоToolStripMenuItem.Text = "Сортировка по";
+            // 
+            // годToolStripMenuItem
+            // 
+            this.годToolStripMenuItem.Name = "годToolStripMenuItem";
+            this.годToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.годToolStripMenuItem.Text = "Год";
+            this.годToolStripMenuItem.Click += new System.EventHandler(this.годToolStripMenuItem_Click);
+            // 
+            // фамилияToolStripMenuItem
+            // 
+            this.фамилияToolStripMenuItem.Name = "фамилияToolStripMenuItem";
+            this.фамилияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.фамилияToolStripMenuItem.Text = "Фамилия";
+            this.фамилияToolStripMenuItem.Click += new System.EventHandler(this.фамилияToolStripMenuItem_Click);
+            // 
+            // специальностьToolStripMenuItem
+            // 
+            this.специальностьToolStripMenuItem.Name = "специальностьToolStripMenuItem";
+            this.специальностьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.специальностьToolStripMenuItem.Text = "Специальность";
+            this.специальностьToolStripMenuItem.Click += new System.EventHandler(this.специальностьToolStripMenuItem_Click);
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -320,6 +365,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поискToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сортировкаПоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem годToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem фамилияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem специальностьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 
