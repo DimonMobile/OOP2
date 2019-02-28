@@ -20,11 +20,10 @@ namespace _2
         public int Cource { get; set; }
         [Required(ErrorMessage = "Отсутствует группа")]
         public int Group { get; set; }
-        [Required(ErrorMessage = "Отсутствует средний балл")]
+        [RangeAtribute]
         public double Average { get; set; }
         [Required(ErrorMessage = "Отсутствует пол")]
         public string Sex { get; set; }
-        [Required(ErrorMessage = "Отсутствует адрес")]
         public Address Address { get; set; }
     }
 }

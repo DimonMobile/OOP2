@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace _2
 {
@@ -33,6 +34,17 @@ namespace _2
                 Average = Double.Parse(textBox2.Text),
                 Sex = domainUpDown1.Text
             };
+
+            var results = new List<ValidationResult>();
+            var context = new ValidationContext(currentStudent);
+            if (!Validator.TryValidateObject(currentStudent, context, results, true))
+            {
+                string errorString = "";
+                foreach(var error in results)
+                    errorString += error + "\n";
+                MessageBox.Show(errorString);
+            }
+
             univercity.Students.Add(currentStudent);
             listBox1.Items.Add(currentStudent.Fio);
         }
