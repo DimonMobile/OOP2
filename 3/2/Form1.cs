@@ -126,5 +126,20 @@ namespace _2
         {
             MessageBox.Show("Плотников Дмитрий Андреевич 2-5");
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            button3_Click(null, null);
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            button2_Click(null, null);
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
