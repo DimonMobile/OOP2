@@ -59,10 +59,13 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -270,7 +273,7 @@
             // поискToolStripMenuItem
             // 
             this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
-            this.поискToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поискToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.поискToolStripMenuItem.Text = "Поиск";
             this.поискToolStripMenuItem.Click += new System.EventHandler(this.поискToolStripMenuItem_Click);
             // 
@@ -287,21 +290,21 @@
             // годToolStripMenuItem
             // 
             this.годToolStripMenuItem.Name = "годToolStripMenuItem";
-            this.годToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.годToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.годToolStripMenuItem.Text = "Год";
             this.годToolStripMenuItem.Click += new System.EventHandler(this.годToolStripMenuItem_Click);
             // 
             // фамилияToolStripMenuItem
             // 
             this.фамилияToolStripMenuItem.Name = "фамилияToolStripMenuItem";
-            this.фамилияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.фамилияToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.фамилияToolStripMenuItem.Text = "Фамилия";
             this.фамилияToolStripMenuItem.Click += new System.EventHandler(this.фамилияToolStripMenuItem_Click);
             // 
             // специальностьToolStripMenuItem
             // 
             this.специальностьToolStripMenuItem.Name = "специальностьToolStripMenuItem";
-            this.специальностьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.специальностьToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.специальностьToolStripMenuItem.Text = "Специальность";
             this.специальностьToolStripMenuItem.Click += new System.EventHandler(this.специальностьToolStripMenuItem_Click);
             // 
@@ -354,11 +357,27 @@
             this.toolStripButton3.Text = "toolStripButton3";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 560);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(691, 22);
+            this.statusStrip1.TabIndex = 24;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 582);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -388,6 +407,8 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,6 +446,8 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

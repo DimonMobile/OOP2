@@ -47,6 +47,8 @@ namespace _2
 
             univercity.Students.Add(currentStudent);
             listBox1.Items.Add(currentStudent.Fio);
+
+            statusStrip1.Text = $"Элементов {listBox1.Items.Count}";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -68,6 +70,7 @@ namespace _2
             }
             foreach(Student student in univercity.Students)
                 listBox1.Items.Add(student.Fio);
+            statusStrip1.Text = $"Элементов {listBox1.Items.Count}";
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -96,6 +99,8 @@ namespace _2
             IEnumerable<Student> ordered = univercity.Students.OrderBy(p => p.Born);
             foreach (Student student in ordered)
                 listBox1.Items.Add(student.Fio);
+
+            statusStrip1.Text = $"Элементов {listBox1.Items.Count}";
         }
 
         private void фамилияToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,6 +125,8 @@ namespace _2
             IEnumerable<Student> ordered = univercity.Students.OrderBy(p => p.Specialization);
             foreach (Student student in ordered)
                 listBox1.Items.Add(student.Fio);
+
+            statusStrip1.Text = $"Элементов {listBox1.Items.Count}";
         }
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)

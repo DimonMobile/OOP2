@@ -23,6 +23,18 @@ namespace _2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Length == 0)
+            {
+                MessageBox.Show("ФИО должно быть указано");
+                return;
+            }
+
+            if (comboBox1.Text.Length == 0)
+            {
+                MessageBox.Show("Специальность должна быть указана");
+                return;
+            }
+
             Student currentStudent = new Student
             {
                 Fio = textBox1.Text,
