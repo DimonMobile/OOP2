@@ -122,5 +122,10 @@
     <Resource Include="images\Font.png" />
     <Resource Include="images\FontColor.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Bold.png" />
+    <Resource Include="images\Italic.png" />
+    <Resource Include="images\Underline.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

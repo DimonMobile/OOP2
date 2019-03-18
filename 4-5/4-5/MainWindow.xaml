@@ -87,6 +87,28 @@
                     <Image Source="images/Paste.png"/>
                 </Button>
             </ToolBar>
+            <ToolBar>
+                <ComboBox Width="200" SelectionChanged="comboBox_click" Name="comboBox">
+                    <ComboBoxItem>Times New Roman</ComboBoxItem>
+                    <ComboBoxItem>Arial</ComboBoxItem>
+                    <ComboBoxItem>Bahnschrift</ComboBoxItem>
+                    <ComboBoxItem>Calibri</ComboBoxItem>
+                    <ComboBoxItem>Cambria</ComboBoxItem>
+                    <ComboBoxItem>Comic Sans MS</ComboBoxItem>
+                </ComboBox>
+                <Slider Width="150" Minimum="10" Maximum="100" Name="slider" ValueChanged="slider_changed">
+                    
+                </Slider>
+                <Button Click="bold_click">
+                    <Image Source="images/Bold.png"/>
+                </Button>
+                <Button Click="italic_click">
+                    <Image Source="images/Italic.png"/>
+                </Button>
+                <Button Click="underline_click">
+                    <Image Source="images/Underline.png"/>
+                </Button>
+            </ToolBar>
         </ToolBarTray>
         <StatusBar Name="statusBar" DockPanel.Dock="Bottom" Height="25">
             <StatusBar Width="200">

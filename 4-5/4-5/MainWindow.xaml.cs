@@ -113,5 +113,52 @@ namespace _4_5
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void comboBox_click(object sender, RoutedEventArgs e)
+        {
+            TextSelection selection = textBox.Selection;
+            if (selection != null && !selection.IsEmpty)
+            {
+                selection.ApplyPropertyValue(TextElement.FontFamilyProperty, comboBox.Text);
+            }
+        }
+
+        private void slider_changed(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (textBox == null)
+                return;
+            TextSelection selection = textBox.Selection;
+            if (selection != null && !selection.IsEmpty)
+            {
+                selection.ApplyPropertyValue(TextElement.FontSizeProperty, slider.Value.ToString());
+            }
+        }
+
+        private void bold_click(object sender, RoutedEventArgs e)
+        {
+            TextSelection selection = textBox.Selection;
+            if (selection != null && !selection.IsEmpty)
+            {
+                selection.ApplyPropertyValue(TextElement.FontWeightProperty, FontWeights.Bold);
+            }
+        }
+
+        private void italic_click(object sender, RoutedEventArgs e)
+        {
+            TextSelection selection = textBox.Selection;
+            if (selection != null && !selection.IsEmpty)
+            {
+                selection.ApplyPropertyValue(TextElement.FontStyleProperty, FontStyles.Italic);
+            }
+        }
+
+        private void underline_click(object sender, RoutedEventArgs e)
+        {
+            TextSelection selection = textBox.Selection;
+            if (selection != null && !selection.IsEmpty)
+            {
+                selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
+            }
+        }
     }
 }
