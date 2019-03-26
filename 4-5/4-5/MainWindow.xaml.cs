@@ -33,6 +33,7 @@ namespace _4_5
                 System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("ru-RU");
             }
             InitializeComponent();
+            Mouse.OverrideCursor = ((FrameworkElement)this.Resources["KinectCursor"]).Cursor;
         }
 
         private void OpenFile_click(object sender, RoutedEventArgs e)

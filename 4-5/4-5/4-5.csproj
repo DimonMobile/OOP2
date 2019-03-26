@@ -139,5 +139,8 @@
   <ItemGroup>
     <Resource Include="images\Localize.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Normal.cur" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

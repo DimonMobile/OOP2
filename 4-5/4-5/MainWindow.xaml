@@ -4,8 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:p="clr-namespace:_4_5.Properties"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="438.964" Width="823.297">
+    <Window.Resources>
+        <FrameworkElement x:Key="KinectCursor" Cursor="images/Normal.cur"/>
+        <ImageBrush x:Key="CommonImBrush" ViewportUnits="Absolute" Viewport="0 0 16 16" TileMode="Tile" ImageSource="images/SaveAs.png" Opacity="1.0"></ImageBrush>
+        <Style TargetType="Button">
+            <Setter Property="Control.FontFamily" Value="Times New Roman"/>
+            <Setter Property="Control.FontWeight" Value="UltraLight"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontWeight" Value="UltraBold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="MenuItem">
+            <Setter Property="Control.Background" Value="Honeydew"/>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="FontSize" To="16" AutoReverse="True"/>
+                            </Storyboard> 
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top" Height="20">
             <MenuItem Header="{x:Static p:Resources.FileMenuItem}">
