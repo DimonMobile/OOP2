@@ -27,7 +27,11 @@ namespace _4_5
     {
         public MainWindow()
         {
-            
+            if (File.Exists("lang"))
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+                System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("ru-RU");
+            }
             InitializeComponent();
         }
 
@@ -164,7 +168,14 @@ namespace _4_5
 
         private void localize_click(object sender, RoutedEventArgs e)
         {
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("ru-RU");
+            if (File.Exists("lang"))
+            {
+                File.Delete("lang");
+            }
+            else
+            {
+                File.Create("lang");
+            }
         }
     }
 }
