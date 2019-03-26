@@ -27,6 +27,7 @@ namespace _4_5
     {
         public MainWindow()
         {
+            
             InitializeComponent();
         }
 
@@ -159,6 +160,11 @@ namespace _4_5
             {
                 selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
             }
+        }
+
+        private void localize_click(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("ru-RU");
         }
     }
 }

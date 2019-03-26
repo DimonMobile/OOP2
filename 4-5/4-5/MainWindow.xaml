@@ -3,62 +3,62 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:_4_5"
+        xmlns:p="clr-namespace:_4_5.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="438.964" Width="823.297">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Height="20">
-            <MenuItem Header="File">
-                <MenuItem Header="New" Click="NewFile_click">
+            <MenuItem Header="{x:Static p:Resources.FileMenuItem}">
+                <MenuItem Header="{x:Static p:Resources.OpenMenuItem}" Click="NewFile_click">
                     <MenuItem.Icon>
                         <Image Source="images/AddFile.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Save" Click="SaveFile_click">
+                <MenuItem Header="{x:Static p:Resources.SaveMenuItem}" Click="SaveFile_click">
                     <MenuItem.Icon>
                         <Image Source="images/SaveAs.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Open" Click="OpenFile_click">
+                <MenuItem Header="{x:Static p:Resources.OpenMenuItem}" Click="OpenFile_click">
                     <MenuItem.Icon>
                         <Image Source="images/OpenFile.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator/>
-                <MenuItem Header="Exit" Click="OpenExit_click">
+                <MenuItem Header="{x:Static p:Resources.ExitMenuItem}" Click="OpenExit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Exit.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Edit">
-                <MenuItem Header="Cut" Click="CutEdit_click">
+            <MenuItem Header="{x:Static p:Resources.EditMenuItem}">
+                <MenuItem Header="{x:Static p:Resources.CutMenuItem}" Click="CutEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Cut.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Copy" Click="CopyEdit_click">
+                <MenuItem Header="{x:Static p:Resources.CopyMenuItem}" Click="CopyEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Copy.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Paste" Click="PasteEdit_click">
+                <MenuItem Header="{x:Static p:Resources.PasteMenuItem}" Click="PasteEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Paste.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Font" Click="FontEdit_click">
+                <MenuItem Header="{x:Static p:Resources.FontMenuItem}" Click="FontEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Font.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Color" Click="ColorEdit_click">
+                <MenuItem Header="{x:Static p:Resources.ColorMenuItem}" Click="ColorEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/FontColor.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="About">
+            <MenuItem Header="{x:Static p:Resources.AboutMenuitem}">
                 <MenuItem.Icon>
                     <Image Source="images/Information.png"/>
                 </MenuItem.Icon>
@@ -97,7 +97,7 @@
                     <ComboBoxItem>Comic Sans MS</ComboBoxItem>
                 </ComboBox>
                 <Slider Width="150" Minimum="10" Maximum="100" Name="slider" ValueChanged="slider_changed">
-                    
+
                 </Slider>
                 <Button Click="bold_click">
                     <Image Source="images/Bold.png"/>
@@ -107,6 +107,11 @@
                 </Button>
                 <Button Click="underline_click">
                     <Image Source="images/Underline.png"/>
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button Click="localize_click">
+                    <Image Source="images/Localize.png"/>
                 </Button>
             </ToolBar>
         </ToolBarTray>
