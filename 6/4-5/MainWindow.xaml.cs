@@ -191,5 +191,13 @@ namespace _4_5
                 File.Create("lang");
             }
         }
+
+        private void themeSwitch_click(object sender, RoutedEventArgs e)
+        {
+            var uri = new Uri("Night.xaml", UriKind.Relative);
+            ResourceDictionary resourceDict = System.Windows.Application.LoadComponent(uri) as ResourceDictionary;
+            System.Windows.Application.Current.Resources.Clear();
+            System.Windows.Application.Current.Resources.MergedDictionaries.Add(resourceDict);
+        }
     }
 }
