@@ -118,6 +118,9 @@
                 <Button Click="localize_click">
                     <Image Source="images/Localize.png"/>
                 </Button>
+                <Button Click="themeSwitch_click">
+                    <Image Source="images/Design.png"/>
+                </Button>
             </ToolBar>
         </ToolBarTray>
         <StatusBar Name="statusBar" DockPanel.Dock="Bottom" Height="25">
