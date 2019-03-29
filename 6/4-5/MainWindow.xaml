@@ -125,6 +125,14 @@
                 </Button>
             </ToolBar>
             <ToolBar>
+                <Button Click="undo_click">
+                    <Image Source="images/Undo.png"/>
+                </Button>
+                <Button Click="redo_click">
+                    <Image Source="images/Redo.png"/>
+                </Button>
+            </ToolBar>
+            <ToolBar>
                 <Button Click="CutEdit_click">
                     <Image Source="images/Cut.png"/>
                 </Button>
