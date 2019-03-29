@@ -206,5 +206,15 @@ namespace _4_5
             this.Resources.Add("bgColorBrush", brush);
             dynamicBtn.SetResourceReference(System.Windows.Controls.Button.BackgroundProperty, "bgColorBrush");
         }
+
+        private void undo_click(object sender, RoutedEventArgs e)
+        {
+            textBox.Undo();
+        }
+
+        private void redo_click(object sender, RoutedEventArgs e)
+        {
+            textBox.Redo();
+        }
     }
 }
