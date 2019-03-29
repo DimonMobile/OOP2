@@ -11,6 +11,9 @@
         <FrameworkElement x:Key="KinectCursor" Cursor="images/Normal.cur"/>
     </Window.Resources>
     <DockPanel>
+        <Button Name="dynamicBtn" Click="setDynamicResource_click">
+            Dynamic resource
+        </Button>
         <Menu DockPanel.Dock="Top" Height="20">
             <MenuItem Name="fileMenuItem" Header="{x:Static p:Resources.FileMenuItem}">
                 <MenuItem Header="{x:Static p:Resources.OpenMenuItem}" Click="NewFile_click">
