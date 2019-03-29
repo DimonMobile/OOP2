@@ -199,5 +199,12 @@ namespace _4_5
             System.Windows.Application.Current.Resources.Clear();
             System.Windows.Application.Current.Resources.MergedDictionaries.Add(resourceDict);
         }
+
+        private void setDynamicResource_click(object sender, RoutedEventArgs e)
+        {
+            SolidColorBrush brush = System.Windows.Media.Brushes.CadetBlue;
+            this.Resources.Add("bgColorBrush", brush);
+            dynamicBtn.SetResourceReference(System.Windows.Controls.Button.BackgroundProperty, "bgColorBrush");
+        }
     }
 }
