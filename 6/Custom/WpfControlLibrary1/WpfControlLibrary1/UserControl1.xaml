@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="WpfControlLibrary1.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfControlLibrary1"
+             mc:Ignorable="d" 
+             d:DesignHeight="220" d:DesignWidth="450">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Simple Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Rectangle Name="Progress" HorizontalAlignment="Left" Height="220" Stroke="Black" VerticalAlignment="Top" RadiusX="50" RadiusY="50" Width="450">
+            <Rectangle.Effect>
+                <DropShadowEffect/>
+            </Rectangle.Effect>
+            <Rectangle.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="LightBlue" Offset="0"/>
+                    <GradientStop Color="DarkBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Button" VerticalAlignment="Center" TextAlignment="Center" Foreground="#FF33C181" LineHeight="24" FontSize="48" FontWeight="Bold" />
+    </Grid>
+</UserControl>
