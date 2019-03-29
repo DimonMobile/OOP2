@@ -9,6 +9,11 @@
         Title="MainWindow" Height="438.964" Width="823.297">
     <Window.Resources>
         <FrameworkElement x:Key="KinectCursor" Cursor="images/Normal.cur"/>
+        <ControlTemplate x:Key="MyOwnTemplate">
+            <Border Width="100" Height="50" Background="LightBlue" CornerRadius="30" BorderBrush="Red" BorderThickness="3">
+                <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center">Templated Btn</ContentControl>
+            </Border>
+        </ControlTemplate>
         <Style TargetType="MenuItem">
             <Style.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
@@ -45,8 +50,9 @@
         </Style>
     </Window.Resources>
     <DockPanel>
+        <Button Template="{StaticResource MyOwnTemplate}"/>
         <Button Name="dynamicBtn" Click="setDynamicResource_click">
-            Dynamic resource
+            Press me
         </Button>
         <Menu DockPanel.Dock="Top" Height="20">
             <MenuItem Name="fileMenuItem" Header="{x:Static p:Resources.FileMenuItem}">
