@@ -9,6 +9,40 @@
         Title="MainWindow" Height="438.964" Width="823.297">
     <Window.Resources>
         <FrameworkElement x:Key="KinectCursor" Cursor="images/Normal.cur"/>
+        <Style TargetType="MenuItem">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="FontSize" To="5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="FontSize" To="12"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="RichTextBox">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=dynamicBtn, Path=IsMouseOver}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                </DataTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True"/>
+                        <Condition Property="IsFocused" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="FontWeight" Value="ExtraLight"/>
+                    </MultiTrigger.Setters>
+            </MultiTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <DockPanel>
         <Button Name="dynamicBtn" Click="setDynamicResource_click">
