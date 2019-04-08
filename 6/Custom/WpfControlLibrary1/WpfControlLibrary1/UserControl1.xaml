@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfControlLibrary1"
              mc:Ignorable="d" 
-             d:DesignHeight="220" d:DesignWidth="450">
+             d:DesignHeight="25" d:DesignWidth="100">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -14,7 +14,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <Rectangle Name="Progress" HorizontalAlignment="Left" Height="220" Stroke="Black" VerticalAlignment="Top" RadiusX="50" RadiusY="50" Width="450">
+        <Rectangle Name="Progress" HorizontalAlignment="Left" Height="25" Stroke="Black" VerticalAlignment="Top" RadiusX="5" RadiusY="5" Width="100">
             <Rectangle.Effect>
                 <DropShadowEffect/>
             </Rectangle.Effect>
@@ -25,6 +25,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Button" VerticalAlignment="Center" TextAlignment="Center" Foreground="#FF33C181" LineHeight="24" FontSize="48" FontWeight="Bold" />
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Button" VerticalAlignment="Center" TextAlignment="Center" Foreground="#FF33C181" LineHeight="24" FontSize="16" FontWeight="Bold" />
     </Grid>
 </UserControl>

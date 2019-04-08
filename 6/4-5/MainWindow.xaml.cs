@@ -25,15 +25,23 @@ namespace _4_5
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        ResourceDictionary ruDict;
+        ResourceDictionary enDict;
+
         public MainWindow()
         {
-            if (File.Exists("lang"))
-            {
-                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
-                System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("ru-RU");
-            }
             InitializeComponent();
             Mouse.OverrideCursor = ((FrameworkElement)this.Resources["KinectCursor"]).Cursor;
+
+            var uri = new Uri("ru.xaml", UriKind.Relative);
+            ruDict = System.Windows.Application.LoadComponent(uri) as ResourceDictionary;
+
+            uri = new Uri("en.xaml", UriKind.Relative);
+            enDict = System.Windows.Application.LoadComponent(uri) as ResourceDictionary;
+
+            this.Resources.Clear();
+            this.Resources.MergedDictionaries.Add(enDict);
         }
 
         private void openFile(string fileName, bool append = true)
@@ -182,14 +190,8 @@ namespace _4_5
 
         private void localize_click(object sender, RoutedEventArgs e)
         {
-            if (File.Exists("lang"))
-            {
-                File.Delete("lang");
-            }
-            else
-            {
-                File.Create("lang");
-            }
+            this.Resources.MergedDictionaries.Remove(enDict);
+            this.Resources.MergedDictionaries.Add(ruDict);
         }
 
         private void themeSwitch_click(object sender, RoutedEventArgs e)

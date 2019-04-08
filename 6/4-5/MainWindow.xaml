@@ -5,49 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:p="clr-namespace:_4_5.Properties"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="438.964" Width="823.297">
+        xmlns:own="clr-namespace:WpfControlLibrary1;assembly=WpfControlLibrary1"
+        mc:Ignorable="d"    
+        Title="MainWindow" Height="372.722" Width="918.686">
     <Window.Resources>
-        <FrameworkElement x:Key="KinectCursor" Cursor="images/Normal.cur"/>
-        <ControlTemplate x:Key="MyOwnTemplate">
-            <Border Width="100" Height="50" Background="LightBlue" CornerRadius="30" BorderBrush="Red" BorderThickness="3">
-                <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center">Templated Btn</ContentControl>
-            </Border>
-        </ControlTemplate>
-        <Style TargetType="MenuItem">
-            <Style.Triggers>
-                <EventTrigger RoutedEvent="MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="FontSize" To="5"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="FontSize" To="12"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="RichTextBox">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=dynamicBtn, Path=IsMouseOver}" Value="True">
-                    <Setter Property="Background" Value="Green"/>
-                </DataTrigger>
-                <MultiTrigger>
-                    <MultiTrigger.Conditions>
-                        <Condition Property="IsMouseOver" Value="True"/>
-                        <Condition Property="IsFocused" Value="True"/>
-                    </MultiTrigger.Conditions>
-                    <MultiTrigger.Setters>
-                        <Setter Property="FontWeight" Value="ExtraLight"/>
-                    </MultiTrigger.Setters>
-            </MultiTrigger>
-            </Style.Triggers>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
     <DockPanel>
         <Button Template="{StaticResource MyOwnTemplate}"/>
@@ -55,58 +21,58 @@
             Press me
         </Button>
         <Menu DockPanel.Dock="Top" Height="20">
-            <MenuItem Name="fileMenuItem" Header="{x:Static p:Resources.FileMenuItem}">
-                <MenuItem Header="{x:Static p:Resources.OpenMenuItem}" Click="NewFile_click">
+            <MenuItem Name="fileMenuItem" Header="{DynamicResource FileMenuItem}">
+                <MenuItem Header="{DynamicResource FileNewItem}" Click="NewFile_click">
                     <MenuItem.Icon>
                         <Image Source="images/AddFile.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.SaveMenuItem}" Click="SaveFile_click">
+                <MenuItem Header="{DynamicResource FileSaveItem}" Click="SaveFile_click">
                     <MenuItem.Icon>
                         <Image Source="images/SaveAs.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.OpenMenuItem}" Click="OpenFile_click">
+                <MenuItem Header="{DynamicResource FileOpenItem}" Click="OpenFile_click">
                     <MenuItem.Icon>
                         <Image Source="images/OpenFile.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator/>
-                <MenuItem Header="{x:Static p:Resources.ExitMenuItem}" Click="OpenExit_click">
+                <MenuItem Header="{DynamicResource FileExitItem}" Click="OpenExit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Exit.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator/>
             </MenuItem>
-            <MenuItem Header="{x:Static p:Resources.EditMenuItem}">
-                <MenuItem Header="{x:Static p:Resources.CutMenuItem}" Click="CutEdit_click">
+            <MenuItem Header="{DynamicResource EditItem}">
+                <MenuItem Header="{DynamicResource EditCutItem}" Click="CutEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Cut.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.CopyMenuItem}" Click="CopyEdit_click">
+                <MenuItem Header="{DynamicResource EditCopyItem}" Click="CopyEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Copy.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.PasteMenuItem}" Click="PasteEdit_click">
+                <MenuItem Header="{DynamicResource EditPasteItem}" Click="PasteEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Paste.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.FontMenuItem}" Click="FontEdit_click">
+                <MenuItem Header="{DynamicResource EditFontItem}" Click="FontEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/Font.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.ColorMenuItem}" Click="ColorEdit_click">
+                <MenuItem Header="{DynamicResource EditColorItem}" Click="ColorEdit_click">
                     <MenuItem.Icon>
                         <Image Source="images/FontColor.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="{x:Static p:Resources.AboutMenuitem}">
+            <MenuItem Header="{DynamicResource AboutItem}">
                 <MenuItem.Icon>
                     <Image Source="images/Information.png"/>
                 </MenuItem.Icon>
@@ -123,6 +89,7 @@
                 <Button Click="OpenFile_click">
                     <Image Source="images/OpenFile.png"/>
                 </Button>
+                <own:UserControl1></own:UserControl1>
             </ToolBar>
             <ToolBar>
                 <Button Click="undo_click">
