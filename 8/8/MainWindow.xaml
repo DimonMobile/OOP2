@@ -16,15 +16,16 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="dataGrid1" Grid.Column="0" Grid.Row="0" IsReadOnly="True" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ItemsSource="{Binding}"/>
+        <DataGrid MouseDoubleClick="dg_onSelected" Name="dataGrid1" Grid.Column="0" Grid.Row="0" IsReadOnly="True" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
         <GridSplitter Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"/>
-        <DataGrid Grid.Column="2" Grid.Row="0" IsReadOnly="True"  ItemsSource="{Binding Source={StaticResource facultyViewSource}}"/>
-
+        <DataGrid Name="dataGrid2" Grid.Column="2" Grid.Row="0" IsReadOnly="True" />
+        <Image Name="imageView" Grid.Column="3"></Image>
         <Grid Grid.Column="0" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
@@ -37,10 +38,10 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button Grid.Column="0" Click="addStudent_onClick" Content="Add" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            <Button Grid.Column="1" Click="test_onClick" Content="Remove" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <Button Grid.Column="1" Click="remove_onClick" Content="Remove" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             <Button Grid.Column="2" Click="test_onClick" Content="Edit" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             <Button Click="pictureSelect_click" Grid.Column="3" Content="..." HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            <TextBox Grid.Column="0" Grid.Row="1" Text="ID"/>
+            <TextBox Name="studentIdTextBox" Grid.Column="0" Grid.Row="1" Text="ID"/>
             <TextBox Name="facultyTextBox" Grid.Column="1" Grid.Row="1" Text="Faculty"/>
             <TextBox Name="nameTextBox" Grid.Column="2" Grid.Row="1" Text="Name"/>
             <TextBlock Grid.Column="3" Grid.Row="1" Text="Picture" IsEnabled="false"/>
@@ -61,6 +62,5 @@
             <TextBox Grid.Column="0" Grid.Row="1" Text="ShortName"/>
             <TextBox Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Text="LongName"/>
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="524,106,-231,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
