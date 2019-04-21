@@ -1,0 +1,107 @@
+﻿<Window x:Class="_9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_9"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListView SelectionChanged="selectionChanged" Name="postList" Grid.Row="0" Grid.Column="1">
+        </ListView>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0">Post title</Label>
+            <RichTextBox Name="textContent" Grid.Row="1" VerticalAlignment="Stretch">
+
+            </RichTextBox>
+        </Grid>
+        
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Grid.Column="0" Header="Add user">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">Username</Label>
+                    <TextBox Name="usernameTextBox" Grid.Row="0" Grid.Column="1"></TextBox>
+                    <Label Grid.Row="1" Grid.Column="0">Email</Label>
+                    <TextBox Name="emailTextBox" Grid.Row="1" Grid.Column="1"></TextBox>
+                    <Label Grid.Row="2" Grid.Column="0">Password</Label>
+                    <PasswordBox Name="passwordTextBox" Grid.Row="2" Grid.Column="1" ></PasswordBox>
+                    <Button Click="addUser_clicked" Grid.Row="3" Grid.Column="1">Add</Button>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Grid.Column="1" Header="Use user">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">Email</Label>
+                    <Label Grid.Row="1" Grid.Column="0">Password</Label>
+
+                    <TextBox Name="useUserNameTextBox" Grid.Row="0" Grid.Column="1"></TextBox>
+                    <PasswordBox Name="usePasswordPasswordBox" Grid.Row="1" Grid.Column="1"></PasswordBox>
+
+                    <DockPanel Grid.Row="2" Grid.Column="0">
+                        <Label Name="userActiveID">ID</Label>
+                        <Label Name="userActiveName">USERNAME</Label>
+                    </DockPanel>
+                    <Button Click="enter_clicked" Grid.Row="2" Grid.Column="1">Enter</Button>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <GroupBox Grid.Row="1" Grid.Column="0" Header="Add post">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0">Title</Label>
+                <Label Grid.Row="1" Grid.Column="0">Body</Label>
+
+                <TextBox Name="addPostTitle" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                <RichTextBox Name="addPostBody" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch"></RichTextBox>
+                <Button Click="addPost_clicked" Grid.Row="2" Grid.Column="1">Add post</Button>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
