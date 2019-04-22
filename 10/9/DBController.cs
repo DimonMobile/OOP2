@@ -23,18 +23,24 @@ namespace _9
             context = new Model1Container();
         }
 
-        public PostRepository PostRepository()
+        public PostRepository PostRepository
         {
-            if (posts == null)
-                posts = new PostRepository(context);
-            return posts;
+            get
+            {
+                if (posts == null)
+                    posts = new PostRepository(context);
+                return posts;
+            }
         }
 
-        public UserRepository UserRepository()
+        public UserRepository UserRepository
         {
-            if (users == null)
-                users = new UserRepository(context);
-            return users;
+            get
+            {
+                if (users == null)
+                    users = new UserRepository(context);
+                return users;
+            }
         }
     }
 }
