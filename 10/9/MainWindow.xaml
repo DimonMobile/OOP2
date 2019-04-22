@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_9"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="582.193" Width="787.324">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -27,7 +27,7 @@
 
             </RichTextBox>
         </Grid>
-        
+
 
         <Grid Grid.Row="0" Grid.Column="0">
             <Grid.ColumnDefinitions>
