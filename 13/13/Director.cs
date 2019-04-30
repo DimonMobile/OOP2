@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace _13
 {
-    class Director : IDirector
+    class Director : IDirector, IPrototype
     {
         private IBuilder m_builder;
         private List<UIElement> m_result;
@@ -17,6 +17,13 @@ namespace _13
         public Director(IBuilder builder)
         {
             m_builder = builder;
+        }
+
+        public IPrototype Clone()
+        {
+            Director newDir = new Director(m_builder);
+            newDir.m_result = m_result.Select(item => item).ToList();
+            return newDir;
         }
 
         public void CreateComplexItem(double x, double y)
