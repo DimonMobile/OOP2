@@ -42,5 +42,15 @@ namespace _13
                 rectElement.Margin = margin;
             }
         }
+
+        private void createComplex_click(object sender, RoutedEventArgs e)
+        {
+            Builder builder = new Builder();
+            Director director = new Director(builder);
+            director.CreateComplexItem(300, 300);
+            List<UIElement> list = director.GetResult();
+            foreach (var element in list)
+                grid.Children.Add(element);
+        }
     }
 }

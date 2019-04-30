@@ -55,9 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Builder.cs" />
     <Compile Include="CreateDialog.xaml.cs">
       <DependentUpon>CreateDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Director.cs" />
+    <Compile Include="IBuilder.cs" />
+    <Compile Include="IDirector.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SquareFactory.cs" />
     <Page Include="CreateDialog.xaml">

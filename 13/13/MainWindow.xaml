@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Name="grid">
-        <Button Click="create_click" Content="Create" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,10,0,0"/>
+        <Button Click="create_click" Content="Create" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Margin="10,10,0,0"/>
+        <Button Click="createComplex_click" Content="Create complex" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Margin="10,40,0,0"/>
     </Grid>
 </Window>
