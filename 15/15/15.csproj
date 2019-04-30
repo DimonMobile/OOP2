@@ -48,8 +48,10 @@
     <Compile Include="Commands\RunCommand.cs" />
     <Compile Include="Commands\StandCommand.cs" />
     <Compile Include="Hero.cs" />
+    <Compile Include="Memento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restorer.cs" />
     <Compile Include="States\IState.cs" />
     <Compile Include="States\JumpingState.cs" />
     <Compile Include="States\RunningState.cs" />
