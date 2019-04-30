@@ -61,8 +61,10 @@
     </Compile>
     <Compile Include="Director.cs" />
     <Compile Include="IBuilder.cs" />
+    <Compile Include="IComponent.cs" />
     <Compile Include="IDirector.cs" />
     <Compile Include="IPrototype.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="RectFactoryDecorator.cs" />
     <Compile Include="RectItemAdapter.cs" />
     <Compile Include="Settings.cs" />
