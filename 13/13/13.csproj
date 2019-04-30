@@ -62,6 +62,7 @@
     <Compile Include="Director.cs" />
     <Compile Include="IBuilder.cs" />
     <Compile Include="IDirector.cs" />
+    <Compile Include="IPrototype.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SquareFactory.cs" />
     <Page Include="CreateDialog.xaml">
