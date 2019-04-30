@@ -63,6 +63,7 @@
     <Compile Include="IBuilder.cs" />
     <Compile Include="IDirector.cs" />
     <Compile Include="IPrototype.cs" />
+    <Compile Include="RectFactoryDecorator.cs" />
     <Compile Include="RectItemAdapter.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SquareFactory.cs" />

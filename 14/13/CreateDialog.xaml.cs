@@ -37,7 +37,7 @@ namespace _13
             Elements.Clear();
             AbstractFactory factory;
             if (rectRadioButton.IsChecked == true)
-                factory = new RectangleFactory();
+                factory = new RectFactoryDecorator(new RectangleFactory());
             else
                 factory = new SquareFactory();
 
