@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_9"
         mc:Ignorable="d"
-        Title="MainWindow" Height="582.193" Width="787.324">
+        Title="MainWindow" Height="534.012" Width="815.43">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -16,16 +16,22 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <ListView SelectionChanged="selectionChanged" Name="postList" Grid.Row="0" Grid.Column="1">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Click="deleteClicked">Delete selected</MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
         </ListView>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0">Post title</Label>
             <RichTextBox Name="textContent" Grid.Row="1" VerticalAlignment="Stretch">
-
             </RichTextBox>
+            <Button Grid.Row="2" Click="onClick">Save</Button>
         </Grid>
 
 
@@ -48,6 +54,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Grid.Column="0">Username</Label>
                     <TextBox Name="usernameTextBox" Grid.Row="0" Grid.Column="1"></TextBox>
@@ -56,6 +63,7 @@
                     <Label Grid.Row="2" Grid.Column="0">Password</Label>
                     <PasswordBox Name="passwordTextBox" Grid.Row="2" Grid.Column="1" ></PasswordBox>
                     <Button Click="addUser_clicked" Grid.Row="3" Grid.Column="1">Add</Button>
+                    <Button Click="transactionClick" Grid.Row="4">Add 2 accounts</Button>
                 </Grid>
             </GroupBox>
             <GroupBox Grid.Row="1" Grid.Column="1" Header="Use user">

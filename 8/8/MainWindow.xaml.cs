@@ -76,15 +76,11 @@ namespace _8
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT Name FROM Student";
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    MessageBox.Show((string)reader.GetValue(0));
-                }
-                reader.Close();
+                command.CommandText = $"UPDATE Student SET Faculty='{facultyTextBox.Text}', Name='{nameTextBox.Text}' WHERE Id={studentIdTextBox.Text}";
+                command.ExecuteNonQuery();
+                FillTablesData();
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.StackTrace);
             }

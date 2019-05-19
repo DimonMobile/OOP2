@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -138,6 +139,85 @@ namespace _9
                 Posts post = context.Posts.Find(selectedIndex);
                 textContent.Document.Blocks.Clear();
                 textContent.AppendText(post.Body);
+            }
+        }
+
+        private void onClick(object sender, RoutedEventArgs e)
+        {
+            if (postList.SelectedItem != null)
+            {
+                int selectedIndex = Int32.Parse(postList.SelectedValue.ToString().Split()[0]);
+                var context = new Model1Container();
+                Posts post = context.Posts.Find(selectedIndex);
+                
+                TextRange range = new TextRange(textContent.Document.ContentStart, textContent.Document.ContentEnd);
+                post.Body = range.Text;
+                context.SaveChanges();
+            }
+        }
+
+        private void deleteClicked(object sender, RoutedEventArgs e)
+        {
+            if (postList.SelectedItem != null)
+            {
+                int selectedIndex = Int32.Parse(postList.SelectedValue.ToString().Split()[0]);
+                var context = new Model1Container();
+                Posts post = context.Posts.Find(selectedIndex);
+                context.Posts.Remove(post);
+                context.SaveChanges();
+
+                using (DBController controller = new DBController())
+                {
+                    Users currentUser = null;
+                    var pontUser = controller.UserRepository.Get(p => p.Id == (int)userActiveID. Content);
+                    foreach (var iterUser in pontUser)
+                    {
+                        currentUser = iterUser;
+                        break;
+                    }
+                    postList.Items.Clear();
+                    var posts = controller.PostRepository.Get(p => p.User.Id == currentUser.Id);
+                    foreach (var currentPost in posts)
+                    {
+                        postList.Items.Add(currentPost.Id.ToString() + " " + currentPost.Title);
+                    }
+                }
+            }
+        }
+
+        private void transactionClick(object sender, RoutedEventArgs e)
+        {
+            using (var context = new Model1Container())
+            {
+                using (DbContextTransaction transaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        Users user1 = new Users()
+                        {
+                            Email = "user1",
+                            Password = "test",
+                            Username = "test"
+                        };
+
+                        Users user2 = new Users()
+                        {
+                            Email = "user2",
+                            Password = "test",
+                            Username = "test"
+                        };
+
+                        context.Users.Add(user1);
+                        context.Users.Add(user2);
+                        context.SaveChanges();
+                        transaction.Commit();   
+
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                    }
+                }
             }
         }
     }
