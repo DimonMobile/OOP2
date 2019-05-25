@@ -85,6 +85,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\CreateRecordCommand.cs" />
+    <Compile Include="Commands\DeleteRecordCommand.cs" />
     <Compile Include="DbContexts\RecordContext.cs" />
     <Compile Include="Models\Record.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using _11.Commands;
 using Models;
 
 namespace ViewModels
@@ -11,10 +13,12 @@ namespace ViewModels
     class RecordViewModel : INotifyPropertyChanged
     {
         private Record record;
+        private ICollection<RecordViewModel> collection;
 
-        public RecordViewModel(Record record)
+        public RecordViewModel(Record record, ICollection<RecordViewModel> collection)
         {
             this.record = record;
+            this.collection = collection;
         }
 
         public string Fio
@@ -64,5 +68,16 @@ namespace ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private ICommand removeCommand;
+        public ICommand RemoveCommand
+        {
+            get
+            {
+                if (removeCommand == null)
+                    removeCommand = new DeleteRecordCommand(collection, this);
+                return removeCommand;
+            }
+        }
     }
 }

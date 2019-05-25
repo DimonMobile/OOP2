@@ -20,5 +20,6 @@ namespace Models
             this.Time = Time;
             this.Duration = Duration;
         }
+        public Record() { }
     }
 }

@@ -19,6 +19,7 @@ namespace _11
             _11.MainWindow view = new _11.MainWindow();
             DbContexts.RecordContext context = new DbContexts.RecordContext();
             view.DataContext = new ViewModels.MainViewModel(context);
+            view.Show();
         }
     }
 }

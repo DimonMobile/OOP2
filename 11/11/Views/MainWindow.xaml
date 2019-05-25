@@ -11,8 +11,42 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="0">
-            
+        <ListView ItemsSource="{Binding Records}" Grid.Column="0" IsSynchronizedWithCurrentItem="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Subject}" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Fio}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Time}"/>
+                            <TextBlock Text=". Длительность: "/>
+                            <TextBlock Text="{Binding Duration}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
+        <StackPanel Grid.Column="1">
+        <ContentControl  Content="{Binding Records}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <Border Margin="15" BorderThickness="1" BorderBrush="BlanchedAlmond">
+                        <StackPanel>
+                            <TextBlock>ФИО:</TextBlock>
+                            <TextBox Text="{Binding Fio}" />
+                            <TextBlock>Предмет:</TextBlock>
+                            <TextBox Text="{Binding Subject}"/>
+                            <TextBlock>Дата и время:</TextBlock>
+                            <DatePickerTextBox Text="{Binding Time}"/>
+                            <TextBlock>Длительность:</TextBlock>
+                            <TextBox Text="{Binding Duration}"/>
+                                <Button Command="{Binding RemoveCommand}">Отменить запись</Button>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+            <Button Command="{Binding NewRecordCommand}">Новая запись</Button>
+        </StackPanel>
     </Grid>
 </Window>
