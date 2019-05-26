@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace _7
+namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +23,11 @@ namespace _7
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void onColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
+        {
+            colorName.Content = ((Color)e.NewValue).ToString();
         }
     }
 }

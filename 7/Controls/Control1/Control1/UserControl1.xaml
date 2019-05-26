@@ -4,11 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Control1"
-             mc:Ignorable="d" >
-    <StackPanel Margin="20">
-        <DockPanel>
-            <Button Name="theButton" DockPanel.Dock="Right" Click="theButton_Click">Browse...</Button>
-            <TextBox Name="theTextBox" MinWidth="{Binding ActualWidth, ElementName=theButton}" Margin="0,0,2,0"></TextBox>
-        </DockPanel>
-    </StackPanel>
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Name="colorPicker">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Slider Name="sliderRed" Minimum="0" Maximum="255" Value="{Binding Red, ElementName=colorPicker}"/>
+        <Slider Name="sliderGreen" Minimum="0" Maximum="255" Grid.Row="1" Value="{Binding Green, ElementName=colorPicker}"/>
+        <Slider Name="sliderBlue" Minimum="0" Maximum="255" Grid.Row="2" Value="{Binding Blue, ElementName=colorPicker}"/>
+        <Rectangle Grid.Column="1" Grid.RowSpan="3" Width="50" Stroke="Black" StrokeThickness="1" StrokeDashArray="2 1">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="{Binding Color, ElementName=colorPicker}"/>
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
 </UserControl>
